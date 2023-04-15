@@ -9,7 +9,7 @@ image:
     alt: 'The Astro logo with the word One.'
 tags: ["tmux", "workflows", "shortcuts"]
 ---
-Readers occasionally request which static HTML generator is used by fabiensanglard.net, and if they can take the same stylesheet/ fonts to start their own blog. I usually send back the whole 134 lines of gen.php[1] and invite them to copy whatever they need to get started[2].
+Readers occasionally request which static HTML generator is used by fabiensanglard.net, and if they can take the same stylesheet/ fonts to start their own blog. I usually send back the whole 134 lines of gen.php<sup>[^1]</sup> and invite them to copy whatever they need to get started<sup>[^2]</sup>.
 
 I also add a, somewhat unsolicited, piece of advice. Writers who are getting started may not need any of this stuff. All you may need is HTML.
 
@@ -26,3 +26,9 @@ I also add a, somewhat unsolicited, piece of advice. Writers who are getting sta
 ---
 
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+
+## References
+---
+
+[^1]: Una referencia.
+[^2]: Una referencia.

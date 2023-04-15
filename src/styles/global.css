@@ -45,9 +45,6 @@ body {
     margin: 8px;
 }
 
-* {
-    box-sizing: border-box;
-}
 
 h1 {
     margin: 1rem 0;
@@ -57,6 +54,15 @@ h2 {
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
+    margin-top: 4ch;
+    margin-bottom: 0px;
+}
+
+p {
+    margin-top: 0px;
+    text-align: justify;
+    line-height: 140%;
+
 }
 
 /* nav styles */
@@ -71,14 +77,13 @@ h2 {
     width: 40px;
     height: 5px;
     margin-bottom: 10px;
-    background-color: #ff9776;
+    background-color: black;
 }
 
 .nav-links {
     width: 100%;
     top: 5rem;
     left: 50px;
-    background-color: #ff9776;
     display: none;
     margin: 0;
 }
@@ -86,7 +91,7 @@ h2 {
 .nav-links a {
     display: block;
     text-align: center;
-    padding: 10px 0;
+    padding: 2px 0;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: bold;
@@ -95,9 +100,7 @@ h2 {
 }
 
 .nav-links a:hover,
-a:focus {
-    background-color: #ff9776;
-}
+a:focus {}
 
 .expanded {
     display: unset;
@@ -105,16 +108,13 @@ a:focus {
 
 @media screen and (min-width: 636px) {
     .nav-links {
-        margin-left: 5em;
-        display: block;
-        position: static;
-        width: auto;
-        background: none;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
     }
 
     .nav-links a {
         display: inline-block;
-        padding: 15px 20px;
     }
 
     .hamburger {
@@ -149,3 +149,9 @@ html.dark {
     font-size: 1.15em;
     background-color: #f8fcfd;
 }
+
+sup {
+    vertical-align: text-top;
+}
+
+.footnotes {}

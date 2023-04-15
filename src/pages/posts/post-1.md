@@ -1,17 +1,20 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'My First Blog Post'
-pubDate: 2023-25-03
-description: 'This is the first post of my new Astro blog.'
-author: 'Astro Learner'
+title: 'Tmux, atajos de teclado y formas de trabajo'
+pubDate: Abril 15, 2023
+description: 'Coleccion personal de atajos y consejos para trabajar con tmux.'
+author: 'Millan Castro'
 image:
     url: 'https://astro.build/assets/blog/astro-1-release-update/cover.jpeg' 
     alt: 'The Astro logo with the word One.'
-tags: ["astro", "blogging", "learning in public"]
+tags: ["tmux", "workflows", "shortcuts"]
 ---
-Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
+Readers occasionally request which static HTML generator is used by fabiensanglard.net, and if they can take the same stylesheet/ fonts to start their own blog. I usually send back the whole 134 lines of gen.php[1] and invite them to copy whatever they need to get started[2].
+
+I also add a, somewhat unsolicited, piece of advice. Writers who are getting started may not need any of this stuff. All you may need is HTML.
 
 ## What I've accomplished
+---
 
 1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
 
@@ -20,5 +23,6 @@ Welcome to my _new blog_ about learning Astro! Here, I will share my learning jo
 3. **Making Blog Posts**: This is my first blog post! I now have Astro pages and Markdown posts!
 
 ## What's next
+---
 
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.

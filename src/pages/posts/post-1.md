@@ -32,3 +32,31 @@ I will finish the Astro tutorial, and then keep adding more posts. Watch this sp
 
 [^1]: Una referencia.
 [^2]: Una referencia.
+
+## Code example
+
+```javascript
+// Initialize WebSocket connection
+const socket = new WebSocket('wss://my-websocket-url')
+
+// Listen for open connection
+socket.addEventListener('open', (event) => {
+  console.log('You say hello...')
+})
+
+// Listen for messages
+socket.addEventListener('message', (event) => {
+  console.log('Incoming message: ', event.data)
+})
+
+// Listen for close connection
+socket.addEventListener('close', (event) => {
+  console.log('...and I say goodbye!')
+})
+
+// Send a message
+socket.send('A message')
+
+// Close websocket connection
+socket.close()
+```

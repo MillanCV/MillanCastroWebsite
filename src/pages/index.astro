@@ -7,7 +7,6 @@ const pageTitle = "Millán Castro - Blog";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>This is where I will post all that I learn.</p>
   <ul class="no-bullets">
     {
       allPosts
@@ -17,7 +16,7 @@ const pageTitle = "Millán Castro - Blog";
             post.frontmatter.pubDate.split("/").reverse().join("-")
           ),
         }))
-        .sort((a, b) => b.dateObject - a.dateObject)
+        .sort((a, b) => b.dateObject.getTime() - a.dateObject.getTime())
         .map((post) => (
           <BlogPost
             url={post.url}

@@ -3,8 +3,8 @@ import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout>
-  <div style="margin-bottom: 2ch;text-transform: none;">
+<BaseLayout pageTitle={frontmatter.title}>
+  <div>
     {frontmatter.pubDate}
   </div>
   <h2>{frontmatter.title}</h2>

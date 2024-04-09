@@ -1,7 +1,7 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Tmux, atajos de teclado y formas de trabajo'
-pubDate: 12/12/2023
+pubDate: 2024-02-03
+sortOrder: 2
 description: 'Coleccion personal de atajos y consejos para trabajar con tmux.'
 author: 'Millan Castro'
 image:

@@ -2,8 +2,9 @@
 const { title, url, date } = Astro.props;
 ---
 
-<li>
-  <a class="post" href={url}>
-    <time>{date}</time>: <h3>{title}</h3>
+<li class="pb-2 font-medium text-lg">
+  <time>{date.toLocaleDateString()}</time>:
+  <a class="hover:underline" href={url}>
+    {title}
   </a>
 </li>

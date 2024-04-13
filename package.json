@@ -13,8 +13,8 @@
     "@astrojs/preact": "^3.1.1",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/tailwind": "^5.1.0",
-    "@fontsource-variable/oswald": "^5.0.19",
-    "@fontsource-variable/public-sans": "^5.0.18",
+    "@fontsource-variable/noto-sans": "^5.0.4",
+    "@fontsource/twinkle-star": "^5.0.19",
     "astro": "^4.5.12",
     "preact": "^10.13.2",
     "tailwindcss": "^3.4.3"

@@ -14,7 +14,6 @@ Readers occasionally request which static HTML generator is used by fabiensangla
 I also add a, somewhat unsolicited, piece of advice. Writers who are getting started may not need any of this stuff. All you may need is HTML.
 
 ## What I've accomplished
----
 
 1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
 
@@ -23,12 +22,10 @@ I also add a, somewhat unsolicited, piece of advice. Writers who are getting sta
 3. **Making Blog Posts**: This is my first blog post! I now have Astro pages and Markdown posts!
 
 ## What's next
----
 
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
 
 ## References
----
 
 [^1]: Una referencia.
 [^2]: Una referencia.

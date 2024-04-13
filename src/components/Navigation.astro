@@ -1,9 +1,26 @@
-<ul class="flex justify-center">
-  <li class="mr-6">
-    <a href="/" class="dark:hover:text-lightPrimary">BLOG</a>
-  </li>
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+---
 
-  <li>
-    <a href="/about/" class="dark:hover:text-lightPrimary">ABOUT</a>
-  </li>
-</ul>
+<nav class="font-medium text-xl text-secondary">
+  <div class="flex justify-between items-center container">
+    <h1 class="font-medium text-xl text-secondary">Millán Castro</h1>
+    <ul class="flex">
+      <li class="ml-6">
+        <a
+          href="/"
+          class={currentPath === "" || currentPath === "posts/"
+            ? "text-primary"
+            : ""}>BLOG</a
+        >
+      </li>
+
+      <li class="ml-6">
+        <a href="/about/" class={currentPath === "about/" ? "text-primary" : ""}
+          >ABOUT</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>

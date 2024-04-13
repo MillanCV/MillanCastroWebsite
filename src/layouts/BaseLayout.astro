@@ -2,11 +2,10 @@
 import Header from "../components/Header.astro";
 const { pageTitle } = Astro.props;
 
-import "@fontsource/twinkle-star";
 import "../styles/base.css";
 ---
 
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -14,7 +13,7 @@ import "../styles/base.css";
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body>
+  <body class="overflow-y-auto pr-4">
     <div class="py-8">
       <Header />
     </div>

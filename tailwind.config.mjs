@@ -22,12 +22,9 @@ export default {
 		},
 		extend: {
 			textColor: {
-				lightPrimary: "#FFFFFF",
-				lightSecondary: "#B3B3B3",
-				lightTertiary: "hsl(203, 15%, 47%)",
-				darkPrimary: "hsl(100, 10%, 95%)",
-				darkSecondary: "hsl(201, 23%, 34%)",
-				darkTertiary: "hsl(203, 15%, 47%)",
+				primary: "#FFFFFF",
+				secondary: "#B3B3B3",
+				tertiary: "hsl(203, 15%, 47%)",
 			},
 		}
 	},

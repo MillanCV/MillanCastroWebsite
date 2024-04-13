@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 
 const allPosts = await getCollection("posts");
 const pageTitle = "Millán Castro - Blog";
@@ -9,7 +9,7 @@ const pageTitle = "Millán Castro - Blog";
 
 <BaseLayout pageTitle={pageTitle}>
   <div class="container">
-    <h1 class="mb-9 font-bold border-b border-gray-700">BLOG</h1>
+    <h1 class="mb-9 border-b border-gray-700">Artículos</h1>
     <ul>
       {
         allPosts.map((post) => (

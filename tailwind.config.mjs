@@ -21,7 +21,7 @@ export default {
 			center: true,
 		},
 		fontFamily: {
-			sans: ['Trebuchet MS'],
+			sans: ['"twinkle star"'],
 		},
 		extend: {
 			textColor: {

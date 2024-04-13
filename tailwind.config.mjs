@@ -20,9 +20,6 @@ export default {
 		container: {
 			center: true,
 		},
-		fontFamily: {
-			sans: ['"twinkle star"'],
-		},
 		extend: {
 			textColor: {
 				lightPrimary: "#FFFFFF",

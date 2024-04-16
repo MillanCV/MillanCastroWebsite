@@ -19,5 +19,8 @@
     @apply font-bold;
   }
 }
+body {
+  padding-left: calc(100vw - 100%);
+}
 
 

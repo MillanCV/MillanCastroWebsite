@@ -6,13 +6,12 @@
   html {
     @apply text-base;
     @apply font-sans;
-    @apply  bg-zinc-900;
+    @apply  bg-dark;
     @apply  text-primary;
   }
 
   h1{ 
-    @apply text-2xl;
-    @apply font-bold;
+    @apply text-2xl font-bold;
   }
 
   h2{ 

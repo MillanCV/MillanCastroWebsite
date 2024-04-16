@@ -21,12 +21,15 @@ export default {
 			center: true,
 		},
 		extend: {
-			textColor: {
+			colors: {
 				primary: "#FFFFFF",
 				secondary: "#B3B3B3",
 				tertiary: "hsl(203, 15%, 47%)",
+				dark: "#181818",
 			},
 		}
 	},
-	plugins: [],
+	plugins: [
+		require('@tailwindcss/typography')
+	],
 }

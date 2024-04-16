@@ -1,4 +1,6 @@
 ---
+import ThemeIcon from "./ThemeIcon.astro";
+
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
 ---
@@ -10,7 +12,7 @@ const currentPath = pathname.slice(1); // remove the first "/"
       <li class="ml-6">
         <a
           href="/"
-          class={currentPath === "" || currentPath === "posts/"
+          class={currentPath === "" || currentPath.includes("blog")
             ? "text-primary"
             : ""}>BLOG</a
         >
@@ -21,6 +23,9 @@ const currentPath = pathname.slice(1); // remove the first "/"
           >ABOUT</a
         >
       </li>
+
+      <li class="ml-6">|</li>
+      <li class="ml-6"><ThemeIcon /></li>
     </ul>
   </div>
 </nav>

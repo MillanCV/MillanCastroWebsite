@@ -1,7 +1,7 @@
 ---
 title: 'Tmux, atajos de teclado y formas de trabajo'
 pubDate: 2024-02-03
-sortOrder: 2
+sortOrder: 1
 description: 'Coleccion personal de atajos y consejos para trabajar con tmux.'
 author: 'Millan Castro'
 image:

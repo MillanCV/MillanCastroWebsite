@@ -4,18 +4,19 @@ export default {
 	darkMode: 'selector',
 	theme: {
 		fontSize: {
-			'sm': '0.8rem',
-			'base': '1rem',
+			'sm': '0.9rem',
+			'base': '1.09rem',
 			'xl': '1.25rem',
 			'2xl': '1.563rem',
 			'3xl': '1.953rem',
 			'4xl': '2.441rem',
 			'5xl': '3.052rem',
+			'code': '1rem',
 		},
 		screens: {
 			sm: '560px',
 			md: '700px',
-			lg: '780px',
+			lg: '760px',
 		},
 		container: {
 			center: true,

@@ -8,6 +8,7 @@
     @apply font-sans;
     @apply  bg-dark;
     @apply  text-primary;
+    @apply leading-relaxed;
   }
 
   h1{ 

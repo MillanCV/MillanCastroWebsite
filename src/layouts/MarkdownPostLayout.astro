@@ -6,9 +6,9 @@ const { frontmatter } = Astro.props;
 
 <BaseLayout pageTitle={frontmatter.title}>
   <div class="container">
-    <div class="flex flex-col items-center text-center my-10">
+    <div class="flex flex-col items-center text-center mt-10 mb-12">
       <h1 class="">{frontmatter.title}</h1>
-      <div class="text-sm text-secondary">
+      <div class="text-sm font-medium text-secondary dark:text-darkSecondary">
         {frontmatter.pubDate.toLocaleDateString().replace(/\//g, "-")}
       </div>
     </div>

@@ -5,7 +5,7 @@ export default {
 	theme: {
 		fontSize: {
 			'sm': '0.9rem',
-			'base': '1.09rem',
+			'base': '1.10rem',
 			'xl': '1.25rem',
 			'2xl': '1.563rem',
 			'3xl': '1.953rem',
@@ -21,12 +21,21 @@ export default {
 		container: {
 			center: true,
 		},
+
 		extend: {
 			colors: {
-				primary: "#FFFFFF",
-				secondary: "#B3B3B3",
-				tertiary: "hsl(203, 15%, 47%)",
-				dark: "#181818",
+				background: "#FFFFFF",
+				surface: "#F5F5F5",
+				primary: " #222222",
+				secondary: "#8f8f8f",
+				tertiary: "#999999",
+				accent: "#007BFF",
+				darkBackground: "#121212",
+				darkSurface: "#1E1E1E",
+				darkPrimary: " #FFFFFF",
+				darkSecondary: "#CCCCCC",
+				darkTertiary: "#888888",
+				darkAccent: "#4CAF50",
 			},
 		}
 	},

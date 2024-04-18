@@ -5,26 +5,31 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
 ---
 
-<nav class="font-medium text-xl text-secondary">
+<nav class="font-medium text-xl text-secondary dark:text-darkSecondary">
   <div class="flex justify-between items-center container">
-    <h1 class="font-medium text-xl text-secondary">Millán Castro</h1>
+    <h1 class="font-medium text-xl text-secondary dark:text-darkSecondary">
+      Millán Castro
+    </h1>
     <ul class="flex">
       <li class="ml-6">
         <a
           href="/"
           class={currentPath === "" || currentPath.includes("blog")
-            ? "text-primary"
-            : ""}>BLOG</a
+            ? "text-primary dark:text-darkPrimary"
+            : ""}>Blog</a
         >
       </li>
 
       <li class="ml-6">
-        <a href="/about/" class={currentPath === "about/" ? "text-primary" : ""}
-          >ABOUT</a
+        <a
+          href="/about/"
+          class={currentPath === "about/"
+            ? "text-primary dark:text-darkPrimary"
+            : ""}>About</a
         >
       </li>
 
-      <li class="ml-6">|</li>
+      <li class="ml-6 text-secondary dark:text-secondary">|</li>
       <li class="ml-6"><ThemeIcon /></li>
     </ul>
   </div>

@@ -27,7 +27,7 @@ export default {
 				background: "#FFFFFF",
 				surface: "#F5F5F5",
 				primary: " #222222",
-				secondary: "#8f8f8f",
+				secondary: "#8c8c8c",
 				tertiary: "#999999",
 				accent: "#007BFF",
 				darkBackground: "#121212",

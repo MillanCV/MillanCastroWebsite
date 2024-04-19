@@ -6,31 +6,32 @@ const currentPath = pathname.slice(1); // remove the first "/"
 ---
 
 <nav class="font-medium text-xl text-secondary dark:text-darkSecondary">
-  <div class="flex justify-between items-center container">
-    <h1 class="font-medium text-xl text-secondary dark:text-darkSecondary">
-      Millán Castro
-    </h1>
-    <ul class="flex">
-      <li class="ml-6">
-        <a
-          href="/"
-          class={currentPath === "" || currentPath.includes("blog")
-            ? "text-primary dark:text-darkPrimary"
-            : ""}>Blog</a
-        >
-      </li>
+  <div class="flex justify-between container">
+    <a href="/">Millán Castro</a>
 
-      <li class="ml-6">
-        <a
-          href="/about/"
-          class={currentPath === "about/"
-            ? "text-primary dark:text-darkPrimary"
-            : ""}>About</a
-        >
-      </li>
+    <div class="flex items-center">
+      <ul class="flex">
+        <li>
+          <a
+            href="/"
+            class={currentPath === ""
+              ? "text-primary dark:text-darkPrimary"
+              : ""}>Blog</a
+          >
+        </li>
 
-      <li class="ml-6 text-secondary dark:text-secondary">|</li>
-      <li class="ml-6"><ThemeIcon /></li>
-    </ul>
+        <li
+          class="px-7 border-r-2 border-secondary dark:border-darkSecondary/50"
+        >
+          <a
+            href="/about/"
+            class={currentPath === "about/"
+              ? "text-primary dark:text-darkPrimary"
+              : ""}>About</a
+          >
+        </li>
+      </ul>
+      <ThemeIcon />
+    </div>
   </div>
 </nav>

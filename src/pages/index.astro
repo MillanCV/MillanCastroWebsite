@@ -9,7 +9,11 @@ const pageTitle = "Millán Castro - Blog";
 
 <BaseLayout pageTitle={pageTitle}>
   <div class="container px-3">
-    <h1 class="border-b border-darkSecondary mt-9 mb-5">Artículos</h1>
+    <h1
+      class="lg:border-b border-secondary dark:border-darkSecondary mt-9 mb-5"
+    >
+      Artículos
+    </h1>
     <ul>
       {
         blog.map((post) => (

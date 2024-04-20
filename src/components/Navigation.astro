@@ -6,7 +6,7 @@ const currentPath = pathname.slice(1); // remove the first "/"
 ---
 
 <nav class="font-medium text-xl text-secondary dark:text-darkSecondary">
-  <div class="flex justify-between container">
+  <div class="flex justify-between container px-4">
     <a href="/">Millán Castro</a>
 
     <div class="flex items-center">
@@ -20,9 +20,7 @@ const currentPath = pathname.slice(1); // remove the first "/"
           >
         </li>
 
-        <li
-          class="px-7 border-r-2 border-secondary dark:border-darkSecondary/50"
-        >
+        <li class="ml-5">
           <a
             href="/about/"
             class={currentPath === "about/"

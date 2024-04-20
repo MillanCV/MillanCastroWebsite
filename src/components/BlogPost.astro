@@ -4,7 +4,9 @@ const { title, url, date } = Astro.props;
 
 <li class="pb-2">
   <a href={url} class="flex items-end font-medium">
-    <time class="pr-2">{date.toLocaleDateString().replace(/\//g, "-")}:</time>
+    <time class="hidden lg:block pr-2"
+      >{date.toLocaleDateString().replace(/\//g, "-")}:</time
+    >
     <h3 class="hover:underline">{title}</h3>
   </a>
 </li>

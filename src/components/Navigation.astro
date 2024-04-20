@@ -5,8 +5,10 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
 ---
 
-<nav class="font-medium text-xl text-secondary dark:text-darkSecondary">
-  <div class="flex justify-between container px-4">
+<nav
+  class="font-medium text-base lg:text-xl text-secondary dark:text-darkSecondary"
+>
+  <div class="flex justify-between container px-3">
     <a href="/">Millán Castro</a>
 
     <div class="flex items-center">

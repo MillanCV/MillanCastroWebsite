@@ -7,6 +7,6 @@ const { title, url, date } = Astro.props;
     <time class="hidden lg:block pr-2"
       >{date.toLocaleDateString().replace(/\//g, "-")}:</time
     >
-    <h3 class="hover:underline">{title}</h3>
+    <h3 class="hover:underline"><span class="lg:hidden">- </span>{title}</h3>
   </a>
 </li>

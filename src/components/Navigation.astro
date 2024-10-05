@@ -6,33 +6,15 @@ const currentPath = pathname.slice(1); // remove the first "/"
 ---
 
 <nav
-  class="py-2 lg:py-8 border-b border-secondary/30 dark:border-darkSecondary/30 lg:border-none
-  font-medium text-xs lg:text-xl text-secondary dark:text-darkSecondary"
+  class="py-2 lg:py-9 border-b border-secondary/30 dark:border-darkSecondary/30 lg:border-none text-secondary dark:text-darkSecondary text-18px"
 >
   <div class="flex items-baseline justify-between container px-3">
-    <a href="/" class="text-xs lg:text-base">Millán Castro's Website</a>
-
-    <div class="flex items-center">
-      <ul class="flex">
-        <li>
-          <a
-            href="/"
-            class={currentPath === ""
-              ? "text-primary dark:text-darkPrimary"
-              : ""}>Blog</a
-          >
-        </li>
-
-        <!-- <li class="ml-5">
-          <a
-            href="/about/"
-            class={currentPath === "about/"
-              ? "text-primary dark:text-darkPrimary"
-              : ""}>About</a
-          >
-        </li> -->
-      </ul>
-      <ThemeIcon />
-    </div>
+    <a href="/" class="font-medium">MILLÁN CASTRO´S WEBSITE</a>
+    <a
+      href="/"
+      class={currentPath === "" ? "text-primary dark:text-darkPrimary" : ""}
+      >BLOG</a
+    >
+    <ThemeIcon />
   </div>
 </nav>

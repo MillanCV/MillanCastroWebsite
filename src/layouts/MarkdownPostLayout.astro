@@ -9,7 +9,7 @@ const { frontmatter } = Astro.props;
     <div class="flex flex-col items-center mt-10 mb-12">
       <h1 class="text-center leading-snug">{frontmatter.title}</h1>
       <div class="text-sm font-medium text-secondary dark:text-darkSecondary">
-        {frontmatter.pubDate.toLocaleDateString().replace(/\//g, "-")}
+        {frontmatter.pubDate}
       </div>
     </div>
 

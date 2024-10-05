@@ -1,6 +1,4 @@
 ---
-import ThemeIcon from "./ThemeIcon.astro";
-
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
 ---
@@ -15,6 +13,5 @@ const currentPath = pathname.slice(1); // remove the first "/"
       class={currentPath === "" ? "text-primary dark:text-darkPrimary" : ""}
       >BLOG</a
     >
-    <ThemeIcon />
   </div>
 </nav>

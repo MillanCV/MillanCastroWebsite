@@ -4,14 +4,9 @@ const currentPath = pathname.slice(1); // remove the first "/"
 ---
 
 <nav
-  class="py-2 lg:py-9 border-b border-secondary/30 dark:border-darkSecondary/30 lg:border-none text-secondary dark:text-darkSecondary text-18px"
+  class="py-2 lg:py-9 border-b border-secondary/60 dark:border-darkSecondary/30 lg:border-none text-primary dark:text-darkSecondary text-2xl font-bold"
 >
-  <div class="flex items-baseline justify-between container px-3">
-    <a href="/" class="font-medium">MILLÁN CASTRO´S WEBSITE</a>
-    <a
-      href="/"
-      class={currentPath === "" ? "text-primary dark:text-darkPrimary" : ""}
-      >BLOG</a
-    >
+  <div class="text-center">
+    <a href="/">THINKING IN BITS</a>
   </div>
 </nav>

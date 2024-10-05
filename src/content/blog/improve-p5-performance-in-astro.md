@@ -1,5 +1,5 @@
 ---
-title: 'P5.js on Astro blog'
+title: 'How I add P5.js sketches to MarkDown posts in my Astro blog'
 pubDate: 05-10-2024
 description: 'trying p5 in astro'
 ---

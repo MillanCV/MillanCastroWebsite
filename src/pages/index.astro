@@ -16,7 +16,7 @@ const blog = (await getCollection("blog"))
       pubDate: parseDate(post.data.pubDate), // Parse string to Date
     },
   }))
-  .sort((a, b) => b.data.sortOrder - a.data.sortOrder);
+  .sort((a, b) => b.data.pubDate - a.data.pubDate);
 
 const pageTitle = "Millán Castro - Blog";
 ---

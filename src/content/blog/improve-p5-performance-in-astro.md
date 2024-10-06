@@ -1,14 +1,14 @@
 ---
-title: 'How I add P5.js sketches to MarkDown posts in my Astro blog'
+title: 'Adding P5.js sketches to Astro'
 pubDate: 05-10-2024
 description: 'trying p5 in astro'
 ---
 <div class="flex justify-center mb-12" >
   <iframe 
     id="p5-sketch-iframe"
-    src="https://MillanCV.github.io/nature_of_code_sketches/src/2_forces/examples/1_masa_0/index.html"
-    width="400" 
-    height="400"
+    src="https://MillanCV.github.io/nature_of_code_sketches/src/3_oscillation/exercises/1_rotate_baton/index.html"
+    width="100%" 
+    height="300"
     loading="lazy">
   </iframe>
 </div>
@@ -64,3 +64,14 @@ After some tests and adding the repo to GitHub Pages, I began to see positive re
 
 
 Now I have no excuses to start reading the book, creating sketches and posting about them!
+
+<script>
+  // Select the iframe
+  const iframe = document.getElementById('p5-sketch-iframe');
+
+  // Add event listener for window resize
+  window.addEventListener('resize', () => {
+    // Reload the iframe source when window is resized
+    iframe.src = iframe.src;
+  });
+</script>

@@ -7,8 +7,10 @@ const { frontmatter } = Astro.props;
 <BaseLayout pageTitle={frontmatter.title}>
   <div class="container px-3">
     <div class="flex flex-col items-center mt-10 mb-12">
-      <h1 class="text-center leading-snug">{frontmatter.title}</h1>
-      <div class="text-sm font-medium text-secondary dark:text-darkSecondary">
+      <h1 class="text-center leading-snug text-xl lg:text-2xl">
+        {frontmatter.title}
+      </h1>
+      <div class="text-sm font-medium text-secondary py-1">
         {frontmatter.pubDate}
       </div>
     </div>

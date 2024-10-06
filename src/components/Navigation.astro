@@ -3,9 +3,7 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
 ---
 
-<nav
-  class="py-2 lg:py-9 border-b border-secondary/60 dark:border-darkSecondary/30 lg:border-none text-primary dark:text-darkSecondary text-2xl font-bold"
->
+<nav class="py-2 lg:py-9 text-primary text-2xl lg:text-3xl font-bold">
   <div class="text-center">
     <a href="/">THINKING IN BITS</a>
   </div>

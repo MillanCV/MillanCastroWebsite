@@ -8,8 +8,7 @@ description: 'trying p5 in astro'
     id="p5-sketch-iframe"
     src="https://MillanCV.github.io/nature_of_code_sketches/src/3_oscillation/exercises/1_rotate_baton/index.html"
     width="100%" 
-    height="300"
-    loading="lazy">
+    height="300">
   </iframe>
 </div>
 

@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
 import { getCollection } from "astro:content";
-import Sketch from "../sketchs/sketch_1/Sketch.astro";
+
 function parseDate(dateString) {
   const [day, month, year] = dateString.split("-");
   return new Date(`${year}-${month}-${day}`); // Convert to YYYY-MM-DD format

@@ -3,10 +3,13 @@ const { title, url, date } = Astro.props;
 ---
 
 <li class="pb-2">
-  <a href={url} class="flex items-end font-medium">
+  <a
+    href={url}
+    class="flex justify-between font-medium hover:bg-darkSecondary transition-colors duration-300"
+  >
+    <h3>{title}</h3>
     <time class="hidden lg:block pr-2"
-      >{date.toLocaleDateString().replace(/\//g, "-")}:</time
+      >{date.toLocaleDateString().replace(/\//g, "-")}</time
     >
-    <h3 class="hover:underline"><span class="lg:hidden"> - </span>{title}</h3>
   </a>
 </li>

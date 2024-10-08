@@ -6,7 +6,7 @@ description: 'trying p5 in astro'
 <div class="flex justify-center mb-12" >
   <iframe 
     id="p5-sketch-iframe"
-    src="https://MillanCV.github.io/nature_of_code_sketches/src/5_autonomous_agents/examples/01_flowfield/index.html"
+    src="https://MillanCV.github.io/nature_of_code_sketches/src/second_lecture/5_autonomous_agents/examples/01_flowfield/index.html"
     width="100%" 
     height="300"
     >
@@ -55,7 +55,7 @@ After some tests and adding the repo to GitHub Pages, I began to see positive re
 <div class="flex justify-center mb-16" >
   <iframe 
     id="p5-sketch-iframe"
-    src="https://MillanCV.github.io/nature_of_code_sketches/src/1_vectors/examples/4_acceleration_1/index.html"
+    src="https://MillanCV.github.io/nature_of_code_sketches/src/second_lecture/0_randomness/001_random_walker/index.html"
     width="400" 
     height="400"
     style="border: none; overflow: hidden;"
@@ -73,6 +73,6 @@ Now I have no excuses to start reading the book, creating sketches and posting a
   // Add event listener for window resize
   window.addEventListener('resize', () => {
     // Reload the iframe source when window is resized
-    iframe.src = iframe.src;
-  });
+   iframe.src = iframe.src;
+});
 </script>

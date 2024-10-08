@@ -6,10 +6,12 @@ description: 'trying p5 in astro'
 <div class="flex justify-center mb-12" >
   <iframe 
     id="p5-sketch-iframe"
-    src="https://MillanCV.github.io/nature_of_code_sketches/src/3_oscillation/exercises/1_rotate_baton/index.html"
+    src="https://MillanCV.github.io/nature_of_code_sketches/src/5_autonomous_agents/examples/01_flowfield/index.html"
     width="100%" 
-    height="300">
+    height="300"
+    >
   </iframe>
+ 
 </div>
 
 These days, I'm reading the physical edition of the book *The Nature Of Code* by Daniel Shiffman. To track my progress, I want to create a series of posts detailing my journey through the book. Therefore, I need a way to display P5.js sketches in my posts.

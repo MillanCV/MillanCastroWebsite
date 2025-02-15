@@ -32,7 +32,7 @@ jobs:
         run: |
           echo "$RASPBERRY_SSH_PRIVATE_KEY" > private_key
           chmod 600 private_key
-          ssh -i private_key -o StrictHostKeyChecking=no pi@<your-raspberry-pi-ip> "
+          ssh -i private_key -o StrictHostKeyChecking=no millan@millancastro.ddns.net "
             cd /path/to/your/astro-project && git pull && npm install && npm run build
             sudo systemctl restart nginx
           "

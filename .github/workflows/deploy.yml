@@ -12,6 +12,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Debug SSH Key
+        run: |
+          ls -l private_key
+          file private_key
+          cat private_key | head -n 5
+
       - name: Set up SSH
         run: |
           echo "$RASPBERRY_SSH_PRIVATE_KEY" > private_key

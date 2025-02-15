@@ -1,0 +1,39 @@
+name: Deploy to Raspberry Pi
+
+on:
+  push:
+    branches:
+      - main  # Trigger the workflow on push to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'  # Specify your desired Node.js version
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Build Astro project
+        run: |
+          npm run build
+
+      - name: Deploy to Raspberry Pi
+        env:
+          RASPBERRY_SSH_PRIVATE_KEY: ${{ secrets.RASPBERRY_SSH_PRIVATE_KEY }}
+        run: |
+          echo "$RASPBERRY_SSH_PRIVATE_KEY" > private_key
+          chmod 600 private_key
+          ssh -i private_key -o StrictHostKeyChecking=no pi@<your-raspberry-pi-ip> "
+            cd /path/to/your/astro-project && git pull && npm install && npm run build
+            sudo systemctl restart nginx
+          "
+

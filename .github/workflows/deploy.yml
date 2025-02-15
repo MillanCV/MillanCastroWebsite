@@ -23,6 +23,10 @@ jobs:
           eval $(ssh-agent -s)
           ssh-add private_key
 
+      - name: Debug SSH Agent
+        run: ssh-add -l || echo "No SSH keys added"
+
+
       - name: Deploy to Raspberry Pi
         run: |
           ssh -o StrictHostKeyChecking=no millan@millancastro.ddns.net << 'EOF'

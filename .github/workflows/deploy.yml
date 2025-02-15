@@ -18,10 +18,12 @@ jobs:
 
       - name: Set up SSH
         run: |
-          echo "$RASPBERRY_SSH_PRIVATE_KEY" | base64 --decode > private_key
+          echo "$RASPBERRY_SSH_PRIVATE_KEY" | tr -d '\r' | base64 --decode > private_key
           chmod 600 private_key
           eval $(ssh-agent -s)
           ssh-add private_key
+          ssh-add -l  # Debugging step
+
 
       - name: Debug SSH Agent
         run: ssh-add -l || echo "No SSH keys added"

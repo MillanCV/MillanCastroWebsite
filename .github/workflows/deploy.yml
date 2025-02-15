@@ -12,6 +12,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Debug Test Secret
+        run: |
+          if [[ -z "$TEST" ]]; then
+            echo "Test Secret is empty!"
+            exit 1
+          else
+            echo "Test Secret is: $TEST"
+          fi
       - name: Debug GitHub Secret
         run: |
           echo "Secret Length: ${#RASPBERRY_SSH_PRIVATE_KEY}"

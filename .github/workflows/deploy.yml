@@ -12,11 +12,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Debug SSH Key
+      - name: Debug GitHub Secret
         run: |
-          ls -l private_key
-          file private_key
-          cat private_key | head -n 5
+          echo "Secret Length: ${#RASPBERRY_SSH_PRIVATE_KEY}"
 
       - name: Set up SSH
         run: |

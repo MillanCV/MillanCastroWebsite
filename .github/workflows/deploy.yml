@@ -8,6 +8,11 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
+    env:
+      TEST: ${{ secrets.TEST }}
+      RASPBERRY_SSH_PRIVATE_KEY: ${{ secrets.RASPBERRY_SSH_PRIVATE_KEY }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -20,6 +25,7 @@ jobs:
           else
             echo "Test Secret is: $TEST"
           fi
+          
       - name: Debug GitHub Secret
         run: |
           echo "Secret Length: ${#RASPBERRY_SSH_PRIVATE_KEY}"

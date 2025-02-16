@@ -19,27 +19,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22  
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build Astro project
-        run: npm run build
-
       - name: Setup SSH Key
         run: |
           echo "$RASPBERRY_SSH_PRIVATE_KEY" | tr -d '\r' > private_key
           chmod 600 private_key
 
-      - name: Debug SSH Connection
+      - name: SSH into Raspberry Pi and Pull Latest Code
         run: |
-          ssh -i private_key -o StrictHostKeyChecking=no -v "$RASPBERRY_USER@$RASPBERRY_HOST" "echo 'SSH works!'"
-
-      - name: Deploy to Raspberry Pi
-        run: |
-          rsync -avz -e "ssh -i private_key -o StrictHostKeyChecking=no" ./dist/ "$RASPBERRY_USER@$RASPBERRY_HOST:$TARGET_DIR"
-          ssh -i private_key -o StrictHostKeyChecking=no "$RASPBERRY_USER@$RASPBERRY_HOST" "sudo systemctl restart nginx"
+          ssh -i private_key -o StrictHostKeyChecking=no "$RASPBERRY_USER@$RASPBERRY_HOST" "
+            cd $TARGET_DIR &&
+            git reset --hard origin/main &&  # Ensure clean state
+            git pull origin main &&
+            npm install && 
+            npm run build &&
+            sudo systemctl restart nginx
+          "

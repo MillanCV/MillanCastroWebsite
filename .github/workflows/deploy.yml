@@ -11,19 +11,18 @@ jobs:
 
     env:
       RASPBERRY_SSH_PRIVATE_KEY: ${{ secrets.RASPBERRY_SSH_PRIVATE_KEY }}
-      RASPBERRY_USER: "millan"  # Change if necessary
+      RASPBERRY_USER: "millan"  
       RASPBERRY_HOST: "millancastro.ddns.net"
-      TARGET_DIR: "/home/millan/MillanCastroWebsite"  # Change if necessary
+      TARGET_DIR: "/home/millan/MillanCastroWebsite"
 
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22  # Use the version required by Astro
+          node-version: 22  
 
       - name: Install dependencies
         run: npm install
@@ -31,16 +30,16 @@ jobs:
       - name: Build Astro project
         run: npm run build
 
-      - name: Debug SSH Setup
+      - name: Setup SSH Key
         run: |
-          ssh -V
-          ls -lah
-          cat private_key
+          echo "$RASPBERRY_SSH_PRIVATE_KEY" | tr -d '\r' > private_key
+          chmod 600 private_key
+
+      - name: Debug SSH Connection
+        run: |
+          ssh -i private_key -o StrictHostKeyChecking=no -v "$RASPBERRY_USER@$RASPBERRY_HOST" "echo 'SSH works!'"
 
       - name: Deploy to Raspberry Pi
         run: |
-          echo "$RASPBERRY_SSH_PRIVATE_KEY" > private_key
-          chmod 600 private_key
-          ssh-keygen -y -f private_key  # Check if key is valid
           rsync -avz -e "ssh -i private_key -o StrictHostKeyChecking=no" ./dist/ "$RASPBERRY_USER@$RASPBERRY_HOST:$TARGET_DIR"
           ssh -i private_key -o StrictHostKeyChecking=no "$RASPBERRY_USER@$RASPBERRY_HOST" "sudo systemctl restart nginx"

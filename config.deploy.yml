@@ -1,0 +1,37 @@
+name: Deploy to Raspberry Pi
+
+on:
+  push:
+    branches:
+      - main  
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      RASPBERRY_SSH_PRIVATE_KEY: ${{ secrets.RASPBERRY_SSH_PRIVATE_KEY }}
+      RASPBERRY_USER: "millan"  
+      RASPBERRY_HOST: "millancastro.ddns.net"
+      TARGET_DIR: "/home/millan/MillanCastroWebsite"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup SSH Key
+        run: |
+          echo "$RASPBERRY_SSH_PRIVATE_KEY" | tr -d '\r' > private_key
+          chmod 600 private_key
+
+      - name: SSH into Raspberry Pi and Pull Latest Code
+        run: |
+          ssh -i private_key -o StrictHostKeyChecking=no "$RASPBERRY_USER@$RASPBERRY_HOST" "
+            cd $TARGET_DIR &&
+            export GIT_SSH_COMMAND='ssh -o StrictHostKeyChecking=no' &&
+            git reset --hard origin/main &&
+            git pull origin main &&
+            npm install && 
+            npm run build &&
+            sudo systemctl restart nginx
+          "

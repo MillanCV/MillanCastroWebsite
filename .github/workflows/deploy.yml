@@ -19,7 +19,7 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v4
-        
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -31,8 +31,16 @@ jobs:
       - name: Build Astro project
         run: npm run build
 
+      - name: Debug SSH Setup
+        run: |
+          ssh -V
+          ls -lah
+          cat private_key
+
       - name: Deploy to Raspberry Pi
         run: |
-          echo "$SSH_PRIVATE_KEY" > private_key && chmod 600 private_key
+          echo "$RASPBERRY_SSH_PRIVATE_KEY" > private_key
+          chmod 600 private_key
+          ssh-keygen -y -f private_key  # Check if key is valid
           rsync -avz -e "ssh -i private_key -o StrictHostKeyChecking=no" ./dist/ "$RASPBERRY_USER@$RASPBERRY_HOST:$TARGET_DIR"
           ssh -i private_key -o StrictHostKeyChecking=no "$RASPBERRY_USER@$RASPBERRY_HOST" "sudo systemctl restart nginx"

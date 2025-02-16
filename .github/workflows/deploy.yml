@@ -3,7 +3,7 @@ name: Deploy to Raspberry Pi
 on:
   push:
     branches:
-      - main  # Or the branch you are using
+      - main  
 
 jobs:
   deploy:
@@ -11,36 +11,24 @@ jobs:
 
     env:
       RASPBERRY_SSH_PRIVATE_KEY: ${{ secrets.RASPBERRY_SSH_PRIVATE_KEY }}
+      RASPBERRY_USER: "millan"  # Change if necessary
+      RASPBERRY_HOST: "millancastro.ddns.net"
+      TARGET_DIR: "/home/millan/MillanCastroWebsite"  # Change if necessary
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22  # Use the version required by Astro
 
-      - name: Debug Private Key Content
-        run: |
-          echo "$RASPBERRY_SSH_PRIVATE_KEY" 
+      - name: Install dependencies
+        run: npm install
 
-      - name: Set up SSH
-        run: |
-          echo "$RASPBERRY_SSH_PRIVATE_KEY" > private_key
-          chmod 600 private_key
-          eval $(ssh-agent -s)
-          ssh-add private_key
-          ssh-add -l  # Debugging step
-
-
-      - name: Debug SSH Agent
-        run: ssh-add -l || echo "No SSH keys added"
-
-      - name: Test SSH Connection
-        run: ssh -vvv -o StrictHostKeyChecking=no millan@millancastro.ddns.net exit
+      - name: Build Astro project
+        run: npm run build
 
       - name: Deploy to Raspberry Pi
         run: |
-          ssh -o StrictHostKeyChecking=no millan@millancastro.ddns.net << 'EOF'
-            cd /home/millan/MillanCastroWebsite || exit
-            git pull || exit
-            npm install || exit
-            npm run build || exit
-            pm2 restart all || exit
-          EOF
+          echo "$SSH_PRIVATE_KEY" > private_key && chmod 600 private_key
+          rsync -avz -e "ssh -i private_key -o StrictHostKeyChecking=no" ./dist/ "$RASPBERRY_USER@$RASPBERRY_HOST:$TARGET_DIR"
+          ssh -i private_key -o StrictHostKeyChecking=no "$RASPBERRY_USER@$RASPBERRY_HOST" "sudo systemctl restart nginx"
